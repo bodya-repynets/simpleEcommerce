@@ -17,19 +17,21 @@ const Product = ({ product }) => {
     dispatch(calculateTotals());
   };
   return (
-    <Link
-      href={`/products/${product.id}`}
-      className="flex flex-col w-[300px] items-center justify-between gap-[20px] bg-white rounded-xl shadow overflow-hidden relative p-[20px]"
-    >
-      <img
-        className="w-full h-[300px] object-contain"
-        src={product.image}
-        alt="product photo"
-      />
-      <div className="flex flex-col items-center justify-between gap-[20px] w-[260px] p-[10px] bg-slate-200 rounded-xl text-center tracking-wider font-semibold self-end">
-        <p>{product.title}</p>
-        <p>$ {product.price}</p>
-      </div>
+    <div className="relative">
+      <Link
+        href={`/products/${product.id}`}
+        className="flex flex-col w-[300px] h-full items-center justify-between gap-[20px] bg-white rounded-xl shadow overflow-hidden relative p-[20px]"
+      >
+        <img
+          className="w-full h-[300px] object-contain"
+          src={product.image}
+          alt="product photo"
+        />
+        <div className="flex flex-col items-center justify-between gap-[20px] w-[260px] p-[10px] bg-slate-200 rounded-xl text-center tracking-wider font-semibold self-end">
+          <p>{product.title}</p>
+          <p>$ {product.price}</p>
+        </div>
+      </Link>
       {cart.products.findIndex((item) => item.product.id === product.id) >=
       0 ? (
         <button
@@ -46,7 +48,7 @@ const Product = ({ product }) => {
           <MdAdd className="text-[30px]" />
         </button>
       )}
-    </Link>
+    </div>
   );
 };
 export default Product;

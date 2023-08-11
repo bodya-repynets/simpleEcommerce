@@ -7,7 +7,7 @@ const ProductPage = async ({ params }) => {
   const product = await data.json();
 
   return (
-    <div className="w-screen min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-[40px]">
+    <div className="w-screen min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-[40px] pb-[40px]">
       <div className="flex flex-col sm:flex-row w-[100%] sm:w-[80%] xl:w-[60%] items-center bg-white p-[20px] lg:p-[40px] rounded-xl gap-[40px]">
         <div className="w-[60%] sm:w-[40%] md:w-[30%] flex items-center justify-center">
           <img className="w-full" src={product.image} alt="product" />
