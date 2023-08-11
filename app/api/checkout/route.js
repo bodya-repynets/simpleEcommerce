@@ -25,8 +25,10 @@ export async function POST(req, res) {
         };
       }),
       mode: "payment",
-      success_url: `http://localhost:3000/?success=true`,
-      cancel_url: `http://localhost:3000/cart`,
+      success_url: `simple-ecommerce-website.vercel.app
+      /?success=true`,
+      cancel_url: `simple-ecommerce-website.vercel.app
+      /cart`,
     });
 
     return NextResponse.json({ sessionId: session.id });
